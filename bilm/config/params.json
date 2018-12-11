@@ -1,0 +1,41 @@
+{
+  "bidirectional": true,
+  "dropout": 0.1,
+
+  "char_cnn": {
+   "activation": "relu",
+   "embedding": {"dim": 16},
+  "filters": [[1, 32],
+   [2, 32],
+   [3, 64],
+   [4, 128],
+   [5, 256],
+   [6, 512],
+   [7, 1024]],
+   "max_characters_per_token": 10,
+   "n_characters": 261,
+   "n_highway": 2},
+  "lstm": {
+  "cell_clip": 3,
+  "dim": 4096,
+  "n_layers": 2,
+  "proj_clip": 3,
+  "projection_dim": 100,
+  "use_skip_connections": true},
+
+  "all_clip_norm_val": 10.0,
+
+  "n_epochs": 10,
+  "n_train_tokens": 703880,
+  "batch_size": 128,
+  "n_tokens_vocab": 56331,
+  "unroll_steps": 20,
+  "learning_rate": 0.2,
+  "n_gpus": 1,
+  "n_negative_samples_batch": 8192,
+  "share_embedding_softmax": false,
+  "sample_softmax": true,
+  "save_dir": "bilm/save_dir/",
+  "vocab_file":"vocab/cn_vocab",
+  "train_prefix":"data/cn_train_data.txt"
+}
