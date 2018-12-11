@@ -25,11 +25,11 @@ with tf.variable_scope('', reuse=True):
     elmo_question_input = weight_layers('input', question_embeddings_op,
                                         l2_coef=0.0)
 
-elmo_context_output = weight_layers('output', context_embeddings_op,
-                                    l2_coef=0.0)
-with tf.variable_scope('', reuse=True):
-    elmo_question_output = weight_layers('output', question_embeddings_op,
-                                         l2_coef=0.0)
+# elmo_context_output = weight_layers('output', context_embeddings_op,
+#                                     l2_coef=0.0)
+# with tf.variable_scope('', reuse=True):
+#     elmo_question_output = weight_layers('output', question_embeddings_op,
+#                                          l2_coef=0.0)
 
 raw_context = [
     'Pretrained biLMs compute representations useful for NLP tasks .',
