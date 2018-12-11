@@ -2,8 +2,7 @@ import tensorflow as tf
 import os
 from bilm.data_process.tokenbatcher import TokenBatcher
 from bilm.model.elmo import weight_layers
-from bilm.model.model import BidirectionalLanguageModel, dump_bilm_embeddings, dump_token_embeddings
-
+from bilm.model.model import BidirectionalLanguageModel, dump_token_embeddings
 
 
 raw_context = [

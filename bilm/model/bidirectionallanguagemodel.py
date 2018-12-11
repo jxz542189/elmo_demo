@@ -71,7 +71,7 @@ class BidirectionalLanguageModel(object):
             layers = [tf.concat([token_embeddings, token_embeddings], axis=2)]
             n_lm_layers = len(lm_graph.lstm_outputs['forward'])
             for i in range(n_lm_layers):
-                layers.append(tf.concat([lm_graph.lsmt_outputs['forward'][i],
+                layers.append(tf.concat([lm_graph.lstm_outputs['forward'][i],
                                          lm_graph.lstm_outputs['backward'][i]],
                                         axis=-1))
 

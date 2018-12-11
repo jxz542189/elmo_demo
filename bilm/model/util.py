@@ -182,8 +182,8 @@ def clip_by_global_norm_summary(t_list, clip_norm, norm_name, variables):
 
 def load_options_latest_checkpoint(tf_save_dir):
     options_file = os.path.join(tf_save_dir, 'options.json')
-    # ckpt_file = tf.train.latest_checkpoint(tf_save_dir)
-    ckpt_file = "/root/PycharmProjects/elmo/bilm/save_dir/model.ckpt-2740"
+    ckpt_file = tf.train.latest_checkpoint(tf_save_dir)
+    # ckpt_file = "/root/PycharmProjects/elmo/bilm/save_dir/model.ckpt-2740"
     with open(options_file, 'r') as fin:
         options = json.load(fin)
     options = tf.contrib.training.HParams(**options)
